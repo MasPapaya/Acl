@@ -16,7 +16,7 @@ class AcosController extends AclAppController {
 	}
 
 	public function admin_add() {
-		if ($this->request->is('post')) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			$this->ManagedAco->create();
 			if ($this->ManagedAco->save($this->request->data)) {
 				$this->Session->setFlash(__('The Aco has been saved'), 'flash/success');
@@ -37,7 +37,8 @@ class AcosController extends AclAppController {
 				$this->request->data = $aco;
 			}
 			
-			if ($this->request->is('post')) {
+			if ($this->request->is('post') || $this->request->is('put')) {
+				
 				if ($this->ManagedAco->save($this->request->data)) {
 					$this->Session->setFlash(__('The Aco has been saved'), 'flash/success');
 					$this->redirect(array('action' => 'index'));

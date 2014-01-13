@@ -35,7 +35,7 @@ class PermissionsController extends AclAppController {
 	}
 	
 	public function admin_add(){
-		if ($this->request->is('post')) {
+		if ($this->request->is('post') || $this->request->is('put')) {
 			
 			$this->ManagedAro->id = $this->request->data['Perm']['aro_id'];
 			$aro_obj = $this->ManagedAro->read();
@@ -66,7 +66,7 @@ class PermissionsController extends AclAppController {
 				$this->request->data = $perm;
 			}
 			
-			if($this->request->is('post')){
+			if ($this->request->is('post') || $this->request->is('put')) {
 				$this->ManagedAro->id = $this->request->data['Perm']['aro_id'];
 				$aro_obj = $this->ManagedAro->read();
 
