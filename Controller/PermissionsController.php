@@ -50,7 +50,7 @@ class PermissionsController extends AclAppController {
 			}
 			
 			$this->redirect(array('action' => 'index'));
-			$this->Session->setFlash(__('The Perm has been saved.'), 'flash/error');
+			$this->Session->setFlash(__('The Perm no has been saved.'), 'flash/error');
 		}
 		$aros = $this->ManagedAro->generateTreeList(NULL, NULL, NULL, '- ', NULL);
 		$acos = $this->ManagedAco->generateTreeList(NULL, NULL, NULL, '- ', NULL);

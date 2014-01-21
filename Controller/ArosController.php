@@ -6,23 +6,24 @@ class ArosController extends AclAppController {
 
 	public $name = 'Aros';
 	public $uses = array('Acl.ManagedAro');
-	
+
 	public function beforeFilter() {
 		parent::beforeFilter();
 	}
-	
-	public function admin_index(){
+
+	public function admin_index() {
 		$aros = $this->paginate('ManagedAro');
+		$this->ManagedAro->recover('parent');
 		$this->set(compact('aros'));
 	}
-	
-	public function admin_add(){
+
+	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->ManagedAro->create();
-			if($this->ManagedAro->save($this->request->data)){
+			if ($this->ManagedAro->save($this->request->data)) {
 				$this->Session->setFlash(__('The ARO has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
-			}else {
+			} else {
 				$this->Session->setFlash(__('The ARO could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
@@ -30,7 +31,7 @@ class ArosController extends AclAppController {
 		$this->set(compact('aros'));
 	}
 
-	public function admin_edit($id = NULL){
+	public function admin_edit($id = NULL) {
 		if (!$this->ManagedAro->exists($id)) {
 			throw new NotFoundException(__('Invalid ManagedAro'));
 		}
@@ -38,10 +39,10 @@ class ArosController extends AclAppController {
 		if ($this->request->isPost()) {
 			// debug($this->request->data);
 
-			if($this->ManagedAro->save($this->request->data)){
+			if ($this->ManagedAro->save($this->request->data)) {
 				$this->Session->setFlash(__('The ManagedAro has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
-			}else {
+			} else {
 				$this->Session->setFlash(__('The ManagedAro could not be saved. Please, try again.'), 'flash/error');
 			}
 		} else {
@@ -51,4 +52,5 @@ class ArosController extends AclAppController {
 		$aros = $this->ManagedAro->generateTreeList(null, null, null, '- ', null);
 		$this->set(compact('aros'));
 	}
+
 }

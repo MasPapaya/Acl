@@ -16,5 +16,6 @@ class AclAppController extends AppController {
 		if(Configure::read('debug') == 2){
 			$this->Auth->allow();
 		}
+		
 	}
 }
