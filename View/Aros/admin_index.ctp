@@ -1,6 +1,6 @@
 <div class="aros cru">
 	<div class="btn-group">
-		<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i> ' . __('New Aro'), array('action' => 'add'), array('escape' => FALSE, 'class' => 'btn btn-primary')); ?>		
+		<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i> ' . __d('acl','New Aro'), array('action' => 'add'), array('escape' => FALSE, 'class' => 'btn btn-primary')); ?>		
 	</div>
 	<h2><?php echo __('Aros'); ?></h2>
 	<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-condensed">

@@ -4,7 +4,7 @@
 	</div>
 	<?php echo $this->Form->create('Perm'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Permission'); ?></legend>
+		<legend><?php echo __d('acl','Edit Permission'); ?></legend>
 		<?php
 		echo $this->Form->input('Perm.access', array('options' => array('allow' => 'Allow', 'deny' => 'Deny')));
 		echo $this->Form->input('Perm.aro_id', array('options' => $aros));

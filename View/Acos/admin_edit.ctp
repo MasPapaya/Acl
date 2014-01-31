@@ -4,7 +4,7 @@
 	</div>
 	<?php echo $this->Form->create('ManagedAco'); ?>
 	<fieldset>
-		<legend><?php echo __('Edit Aco'); ?></legend>
+		<legend><?php echo __d('acl','Edit Aco'); ?></legend>
 		<?php
 		echo $this->Form->input('ManagedAco.id', array('type' => 'hidden'));
 		echo $this->Form->input('ManagedAco.parent_id', array('empty' => __('(NULL)'), 'options' => $acos));

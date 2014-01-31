@@ -4,7 +4,7 @@
 	</div>
 	<?php echo $this->Form->create('ManagedAro'); ?>
 	<fieldset>
-		<legend><?php echo __('Add Aro'); ?></legend>
+		<legend><?php echo __d('acl','Add Aro'); ?></legend>
 		<?php
 		echo $this->Form->input('parent_id', array('empty' => __('Select One'), 'options' => $aros));
 		echo $this->Form->input('model');

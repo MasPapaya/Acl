@@ -1,10 +1,10 @@
 <div class="acos cru">
 	<div class="btn-group">
-		<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i> ' . __('New Aco'), array('action' => 'add'), array('escape' => FALSE, 'class' => 'btn btn-primary')); ?>
-		<?php echo $this->Html->link('<i class="icon-refresh icon-white"></i> ' . __('Repair Aco Tree'), array('action' => 'repair'), array('escape' => FALSE, 'class' => 'btn btn-primary')); ?>	
+		<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i> ' . __d('acl', 'New Aco'), array('action' => 'add'), array('escape' => FALSE, 'class' => 'btn btn-primary')); ?>
+		<?php echo $this->Html->link('<i class="icon-refresh icon-white"></i> ' . __d('acl', 'Repair Aco Tree'), array('action' => 'repair'), array('escape' => FALSE, 'class' => 'btn btn-primary')); ?>	
 	</div>
 	<div>
-		<h2><?php echo __('Acos'); ?></h2>
+		<h2><?php echo __d('acl', 'Acos'); ?></h2>
 		<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-condensed">
 			<tr>
 				<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -22,8 +22,7 @@
 					<td class="actions">
 						<div class="btn-group">
 							<?php echo $this->Html->link('<i class="icon-pencil"></i>', array('action' => 'edit', $aco['ManagedAco']['id']), array('class' => 'btn', 'escape' => FALSE)); ?>
-							<?php echo $this->Form->postLink('<i class="icon-trash icon-white"></i>', array('action' => 'remove', $aco['ManagedAco']['id']), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to remove # %s from tree?', $aco['ManagedAco']['id'])); ?>
-							<?php //echo $this->Form->postLink('<i class="icon-trash icon-white"></i>', array('action' => 'delete', $aco['ManagedAco']['id']), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to delete # %s?', $aco['ManagedAco']['id'])); ?>
+							<?php echo $this->Form->postLink('<i class="icon-trash icon-white"></i>', array('action' => 'remove', $aco['ManagedAco']['id']), array('class' => 'btn btn-danger', 'escape' => FALSE), __('Are you sure you want to remove # %s from tree?', $aco['ManagedAco']['id'])); ?>							
 						</div>
 					</td>
 				</tr>

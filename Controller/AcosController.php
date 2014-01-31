@@ -19,10 +19,10 @@ class AcosController extends AclAppController {
 		if ($this->request->is('post') || $this->request->is('put')) {
 			$this->ManagedAco->create();
 			if ($this->ManagedAco->save($this->request->data)) {
-				$this->Session->setFlash(__('The Aco has been saved'), 'flash/success');
+				$this->Session->setFlash(__d('acl','The Aco has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The Aco could not be saved. Please, try again.'), 'flash/error');
+				$this->Session->setFlash(__d('acl','The Aco could not be saved. Please, try again.'), 'flash/error');
 			}
 		}
 		$acos = $this->ManagedAco->generateTreeList(null, null, null, '- ', null);
@@ -40,11 +40,11 @@ class AcosController extends AclAppController {
 			if ($this->request->is('post') || $this->request->is('put')) {
 				
 				if ($this->ManagedAco->save($this->request->data)) {
-					$this->Session->setFlash(__('The Aco has been saved'), 'flash/success');
+					$this->Session->setFlash(__d('acl','The Aco has been saved'), 'flash/success');
 					$this->redirect(array('action' => 'index'));
 				} else {
 					//pr($this->validationErrors);
-					$this->Session->setFlash(__('The Aco could not be saved. Please, try again.'), 'flash/error');
+					$this->Session->setFlash(__d('acl','The Aco could not be saved. Please, try again.'), 'flash/error');
 				}
 			}
 		}
@@ -61,7 +61,7 @@ class AcosController extends AclAppController {
 		if($id != NULL){
 			if ($this->request->is('post')) {
 				$this->ManagedAco->removeFromTree($id, FALSE);
-				$this->Session->setFlash(__('The Aco has been removed'), 'flash/success');
+				$this->Session->setFlash(__d('acl','The Aco has been removed'), 'flash/success');
 				
 			}
 		}
@@ -72,7 +72,7 @@ class AcosController extends AclAppController {
 		if($id != NULL){
 			if ($this->request->is('post')) {
 				$this->ManagedAco->removeFromTree($id, TRUE);
-				$this->Session->setFlash(__('The Aco has been deleted'), 'flash/success');
+				$this->Session->setFlash(__d('acl','The Aco has been deleted'), 'flash/success');
 				
 			}
 		}

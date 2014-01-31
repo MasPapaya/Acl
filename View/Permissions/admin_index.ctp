@@ -1,7 +1,7 @@
 <div class="allowedR_Types">
-	<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i>&nbsp;' . __('New Permission'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
+	<?php echo $this->Html->link('<i class="icon-plus-sign icon-white"></i>&nbsp;' . __d('acl','New Permission'), array('action' => 'add', 'admin' => true), array('class' => 'btn btn-primary', 'escape' => FALSE)); ?>
 	<div>
-		<h2><?php echo __('Permissions'); ?></h2>
+		<h2><?php echo __d('acl','Permissions'); ?></h2>
 		<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered table-condensed">
 			<tr>
 				<th><?php echo $this->Paginator->sort('id'); ?></th>
